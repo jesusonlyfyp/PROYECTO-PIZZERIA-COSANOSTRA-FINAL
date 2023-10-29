@@ -1,0 +1,607 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind:wght@300;500&family=Poppins:wght@300;500&display=swap');
+
+:root {
+    /* PALETA DE COLORES */
+    /* https://paletadecolores.com.mx/paleta/ff4746/e8da5e/92b55f/487d76/4b4452/ */
+    --color1:  #ff4746;
+    --color2:  #e8da5e;
+    --color3:  #92b55f;
+    --color4:  #487d76;
+    --color5:  #4b4452;
+    /* + SEgunda Paleta de Colores */
+    --primary-solid: #b57d07;
+    --secundary-solid: #E0520A;
+    --transition-solid: #EF6A1F;
+    --dark-solid-1: #1F1F1F;
+    --dark-solid-2: #2B2E37;
+    --dark-solid-3: #3C3D3F;
+    --light-font-solid: #D9DADC;
+
+    /* + Tipografia */
+    --base-font-family: 'Hind', sans-serif;
+    --alternative-font-family: 'Poppins', sans-serif;
+
+    /* Tamaño de Letra */
+    --font-display: 3em;
+    --font-jumbo: 2.4em;
+    --font-xlarge: 2em;
+    --font-large: 1.8em;
+    --font-medium: 1.2em;
+    --font-small: 1em;
+    --font-xsmall: 0.8em;
+
+    /* + Espaciado */
+    --spacing-240: 24rem;
+    --spacing-200: 20rem;
+    --spacing-180: 18rem;
+    --spacing-160: 16rem;
+    --spacing-130: 13rem;
+    --spacing-100: 10rem;
+    --spacing-68: 6.8rem;
+    --spacing-36: 3.6rem;
+    --spacing-28: 2.8rem;
+    --spacing-24: 2.4rem;
+    --spacing-20: 2rem;
+    --spacing-16: 1.6rem;
+    --spacing-12: 1.2rem;
+    --spacing-8: 0.8rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: var(--base-font-family);
+    color: var(--dark-solid-1);
+}
+
+a {
+    text-decoration: none;
+    font-family: inherit;
+    color: inherit;
+}
+
+header,
+footer {
+    font-family: var(--alternative-font-family);
+    color: var(--light-font-solid);
+}
+
+ul {
+    list-style-type: none;
+}
+
+img {
+    width: 100%;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* + HEADER */
+
+header {
+    background-color: var(--color1);
+    padding: var(--spacing-12);
+
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar__info {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-8);
+}
+
+.navbar__logo {
+    max-width: 25%;
+}
+
+.abrir-menu, .cerrar-menu{
+    display: none;    
+}
+
+.navbar__menu {
+    display: flex;
+    gap: var(--spacing-8);
+}
+
+.navbar__item{
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+
+.navbar__nombre {
+    font-family: var(--base-font-family);
+    font-size: var(--font-xlarge);
+    font-weight: 500;
+}
+
+.navbar__link {
+    font-size: var(--font-small);
+    font-weight: 200;
+    padding: var(--spacing-8);
+    display: inline-block;
+    transition: background .2s ease-in-out;
+    position: relative;
+    border-radius: 15px;
+
+}
+
+.navbar__link:hover {
+    background-color: var(--secundary-solid);
+}
+
+.with-icon {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-8);
+}
+
+.with-submenu:hover .submenu {
+    display: block;
+}
+
+.submenu {
+    display: none;
+    width: 120px;
+    position: absolute;
+    background-color: var(--dark-solid-3);
+    z-index: 3;
+    border-radius: 20px;
+}
+
+.submenu__link {
+    display: block;
+    padding: var(--spacing-8);
+    font-weight: 300;
+    font-size: var(--font-xsmall);
+    transition: background .2s ease-in-out;
+}
+
+.submenu__link:hover {
+    background-color: var(--secundary-solid);
+    border-radius: 15px;
+}
+
+
+
+
+/* + FOOTER */
+
+footer {
+    background-color: var(--color4);
+    padding: var(--spacing-12);
+}
+
+.footer__navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer__info {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.footer__logo {
+    max-width: 80%;
+}
+
+.footer__nombre {
+    font-family: var(--base-font-family);
+    font-size: var(--font-large);
+    font-weight: 400;
+}
+
+.footer__redes {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-8);
+}
+
+.footer__text {
+    font-family: var(--alternative-font-family);
+    font-size: var(--font-small);
+    font-weight: 300;
+    text-align: right;
+}
+
+.footer__menu {
+    display: flex;
+    justify-content: end;
+    gap: var(--spacing-12);
+}
+
+.footer__item {
+    max-width: 7%;
+}
+
+.footer__copy {
+    font-family: var(--alternative-font-family);
+    font-size: var(--font-small);
+    font-weight: 300;
+    text-align: center;
+}
+
+.footer__copy:hover {
+    color: rgb(30, 27, 23);
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+    text-align: center;
+    scroll-behavior: smooth;
+}
+
+@media screen and (max-width: 992px) {
+
+    /* + MAIN INDEX */
+    
+.abrir-menu, .cerrar-menu{
+    display: block;
+    border:0;
+    color: #D9DADC;
+    font-size: 1.2rem;
+    background-color: transparent;
+    cursor: pointer;
+    padding: var(--spacing-8);
+}
+
+.navbar__item{
+    opacity: 0;
+    visibility: hidden;
+}
+
+.navbar__item{
+    flex-direction: column;
+    align-items: end;
+    justify-content: start;
+    gap: var(--spacing-8);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    padding: var(--spacing-36) var(--spacing-12);
+    background-color: var(--dark-solid-3);
+    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .5);
+    position: absolute;
+    z-index: 3;
+}
+
+.navbar__item.visible{
+    opacity: 1;
+    visibility: visible;
+}
+
+.navbar__menu{
+    flex-direction: column;
+    align-items: start;
+    
+}
+
+.with-submenu:hover .submenu {
+    display: none;
+}
+
+
+    .hero__content {
+        justify-content: center;
+        padding: var(--spacing-24);
+    }
+
+    .hero__eslogan {
+        font-size: 1.4em;
+    }
+
+}
+
+/*- COMIENZO de la Pagina cosanostra*/
+
+
+.titulo_h2 {
+    text-align: center;
+    color: rgb(217, 152, 32);
+    font-weight: bold;
+    font-size: 34px;
+}
+
+
+
+/*- Submenus de la pagina pizza: Especificaciones tecnicas de cada avion (menu / cosanostra. */
+
+.hero1 {
+    overflow: hidden;
+}
+
+.heading1 h1 {
+    color: #b57d07;
+    font-size: 50px;
+    text-align: center;
+    margin-top: 35px;
+}
+
+.container1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    margin: 65px auto;
+}
+
+.hero-content {
+    flex: 1;
+    width: 600px;
+    margin: 0px 25px;
+    animation: fadeInUp 3s ease;
+}
+
+.container1 .hero-content h2 {
+    font-size: 23px;
+    margin-bottom: 20px;
+    color: #44a8c4;
+    text-align: center;
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.5);
+}
+
+.hero-content p {
+    font-size: 24px;
+    line-height: 1.5;
+    margin-bottom: 4vw;
+    color: #395182;
+    text-align: center;
+}
+
+.hero-content button {
+    display: inline-block;
+    background-color: #1F1F1F;
+    color: #7fa1e5;
+    padding: 12px 24px;
+    border-radius: 5px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.hero-content button:hover {
+    background-color: #33576f;
+    color: #1F1F1F;
+    transform: scale(1.1);
+    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.9)
+}
+
+.hero-image {
+    flex: 1;
+    width: 600px;
+    margin: auto;
+    animation: fadeInRight 3s ease;
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.9)
+}
+
+/*- Submenus de la pagina pizza: espeicficaciones  / media query para 480px y 990px*/
+
+@media screen and (max-width: 480px) {
+    .container1 .hero-content p {
+        font-size: 15px;
+    }
+
+    .heading1 h1 {
+        font-size: 13px;
+        margin-top: 25px;
+    }
+
+    .hero1 {
+        margin: 0px;
+    }
+
+    .container1 {
+        width: 100%;
+        flex-direction: column;
+        margin: 0px;
+        padding: 0px 40px;
+    }
+
+    .hero-content {
+        width: 100%;
+        margin: 35px 0px;
+    }
+
+    .hero-content h2 {
+        font-size: 11px;
+    }
+
+    .hero-content button {
+        font-size: 12px;
+        padding: 8px 16px
+    }
+
+    .hero-image {
+        width: 100%;
+    }
+
+    .hero-image img {
+        width: 100%;
+    }
+
+    .footer__copy {
+        font-size: 14px;
+    }
+
+    .footer__text {
+        font-size: 12px;
+    }
+
+    .titulo_h2 {
+        font-size: 28px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .heading1 h1 {
+        font-size: 30px;
+        margin-top: 20px;
+    }
+
+    .hero1 {
+        margin: 0px;
+    }
+
+    .container1 {
+        width: 100%;
+        flex-direction: column;
+        margin: 0px;
+        padding: 0px 40px;
+    }
+
+    .hero-content {
+        width: 100%;
+        margin: 35px 0px;
+    }
+
+    .hero-content h2 {
+        font-size: 29px;
+    }
+
+    .hero-content p {
+        font-size: 22px;
+        margin-bottom: 16px;
+    }
+
+    .hero-content button {
+        font-size: 16px;
+        padding: 8px 16px;
+    }
+
+    .hero-image {
+        width: 100%;
+    }
+
+    img {
+        width: 100%;
+    }
+}
+
+/*- Submenus de la pagina pizza: ANIMACIONES para todos los dispositivos*/
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+/*- Submenus de la pagina cosanostra: Comienzo del sector de GALERIA DE IMAGENES*/
+
+.gal-03 h3 {
+    font-size: 35px;
+    color: #b57d07;
+    text-align: center;
+    animation: fadeInUp 3s ease;
+}
+
+.container-img {
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 250px;
+    grid-gap: 20px;
+    animation: fadeInRight 3s ease;
+}
+
+.container-img .box-img figure {
+    width: 100%;
+    height: 100%;
+}
+
+.container-img .box-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+    transition: 3s ease;
+    border-radius: 15px;
+    border: 2px solid #000;
+}
+
+.container-img .box-img img:hover {
+    transform: scale(1.3);
+    transform: 3s ease;
+    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.9)
+}
+
+.container-img .box-img:nth-child(1) {
+    grid-column-start: span 2;
+}
+
+.container-img .box-img:nth-child(4) {
+    grid-row-start: span 2;
+}
+
+/*-  pagina cosanostra: GALERIA media query para 480px y 992px */
+
+@media screen and (max-width:992px) {
+    .container-img {
+        width: 95%;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 10px;
+        grid-template-rows: 200px;
+    }
+
+    .container-img .box-img:nth-child(1) {
+        grid-column-start: span 1;
+    }
+}
+
+@media screen and (max-width:480px) {
+    .container-img {
+        width: 90%;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .container-img .box-img img {
+        height: 200px;
+    }
+}
+
+.cta-button button {
+    width: 100%;
+}
+
+/*- FINAL de estilos/ media query / Pagina SUBMENUS */
